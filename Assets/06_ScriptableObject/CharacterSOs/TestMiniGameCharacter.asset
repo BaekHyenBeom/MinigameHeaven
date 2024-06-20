@@ -12,6 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 155c720054c14824386dcdaecbef2bd7, type: 3}
   m_Name: TestMiniGameCharacter
   m_EditorClassIdentifier: 
+  characterName: "\uD14C\uC2A4\uD2B8 \uB354\uBBF8"
   playerPrefab: {fileID: 8583594701090144120, guid: 47892f4aa98ce6745b22c83cd31240bf, type: 3}
   characterSprite: {fileID: 0}
   characterAnimator: []
