@@ -22,7 +22,15 @@ public class MiniGameDescUI : MonoBehaviour
 
     private void DescSetting()
     {
-        MinigameNameTxt.text = GameManager.Instance.curMinigameName;
+        if (GameManager.Instance.curMinigameName != null)
+        {
+            MinigameNameTxt.text = GameManager.Instance.curMinigameName;
+        }
+        else
+        {
+            MinigameNameTxt.text = "게임을\n선택하세요";
+        }
+        
         HighScoreNum.text = "반영 예정";
     }
 }
