@@ -10,6 +10,11 @@ public class DataManager : Singleton<DataManager>
     public int userMoney;
     private Dictionary<MiniGameType, int> gameHighScore = new Dictionary<MiniGameType, int>();
 
+        // 테스트용 체크마크들
+    [Header("Test Settings")]
+    public bool saveTest;
+    public bool loadTest;
+
     void Start()
     {
         // path를 찾은 다음에 뭔갈하는 게 좋을 듯..
@@ -21,8 +26,8 @@ public class DataManager : Singleton<DataManager>
 
 
             // 테스트
-        //Save();
-        //Load();
+        if (saveTest) Save();
+        if (loadTest) Load();
     }
 
     public void Save()
@@ -63,5 +68,20 @@ public class DataManager : Singleton<DataManager>
                 Debug.Log($"{data.Key}, {data.Value}");
             }
         }
+    }
+
+    public int GiveHighScore(MiniGameType type)
+    {
+        return gameHighScore[type];
+    }
+    
+    public int GiveTotalScore()
+    {
+        int totalScore = 0;
+        foreach (int i in gameHighScore.Values)
+        {
+            totalScore += i;
+        }
+        return totalScore;
     }
 }
