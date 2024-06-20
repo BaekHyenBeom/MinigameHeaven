@@ -18,6 +18,10 @@ public class Singleton<T> : MonoBehaviour where T : MonoBehaviour
                 Instance = singletonObject.AddComponent<T>();
             }
         }
+        else
+        {
+            Destroy(this.gameObject);
+        }
         DontDestroyOnLoad(Instance);
     }
 }
