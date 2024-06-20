@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using TMPro;
@@ -6,6 +7,7 @@ using UnityEngine.UI;
 
 public enum MiniGameType
 {
+    None = -2,
     Test = -1,
     RopeJump = 0,
     HighJump,

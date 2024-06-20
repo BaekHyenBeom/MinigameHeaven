@@ -7,7 +7,7 @@ public class Character : MonoBehaviour
     public MiniGameManager curMiniGame; // 게임 오버 판정 때문에
 
     [Header("Basic Setting")]
-    public Controller curController;
+    public IController curController;
     public CharacterSO curCharacter;
     public Animator curAnimator;
     

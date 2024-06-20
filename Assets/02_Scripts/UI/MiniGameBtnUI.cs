@@ -4,11 +4,11 @@ using UnityEngine;
 
 public class MiniGameBtnUI : MonoBehaviour
 {
-    public MiniGameManager myMiniGameManager;
+    public MiniGameType gameType;
 
     public void SelectMiniGame()
     {
-        GameManager.Instance.curMinigame = myMiniGameManager;
-        Debug.Log($"{myMiniGameManager.gameType.ToString()}가 선택되었습니다.");
+        GameManager.Instance.curMinigame = gameType;
+        Debug.Log($"{gameType}가 선택되었습니다.");
     }
 }

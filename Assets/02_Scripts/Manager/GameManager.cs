@@ -6,5 +6,5 @@ public class GameManager : Singleton<GameManager>
 {
     public DataManager dataContaioner;
     public CharacterSO curCharacter;
-    public MiniGameManager curMinigame;
+    public MiniGameType curMinigame;
 }
