@@ -45,4 +45,14 @@ public class SwimSwimController : MonoBehaviour, IController
             curMovementInput = 0f;
         }
     }
+
+    public void ConnetEvent(Character character)
+    {
+        throw new NotImplementedException();
+    }
+
+    public void DisConnectEvent(Character character)
+    {
+        throw new NotImplementedException();
+    }
 }
