@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class TestMiniGameManager : MiniGameManager
 {
-    public void Awake()
+    public void Start()
     {
         // 초기 세팅
         curScore = 0;
