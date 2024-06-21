@@ -4,7 +4,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.InputSystem;
 
-public class TestController : MonoBehaviour, Controller
+public class TestController : MonoBehaviour, IController
 {
     public Rigidbody2D rigid;
     public float curMovementInput;
@@ -44,5 +44,15 @@ public class TestController : MonoBehaviour, Controller
         {
             curMovementInput = 0f;
         }
+    }
+
+    public void ConnetEvent(Character character)
+    {
+        throw new NotImplementedException();
+    }
+
+    public void DisConnectEvent(Character character)
+    {
+        throw new NotImplementedException();
     }
 }
