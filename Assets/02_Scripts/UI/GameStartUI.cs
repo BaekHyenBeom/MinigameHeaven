@@ -1,16 +1,21 @@
 using System.Collections;
 using System.Collections.Generic;
+using TMPro;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
 public class GameStartUI : MonoBehaviour
 {
+    public GameObject alertobj;
+    public TextMeshProUGUI alertTxt;
+    private int alertTime;
+
     public void GameStart()
     {
         if (GameManager.Instance.curCharacter == null)
         {
             SoundUtil.SfxSound("ErrorSound");
-            Debug.Log("캐릭터를 선택하지 않았습니다!");
+            AlertTxt("캐릭터를 선택하세요!");
             return;
         }
         if (GameManager.Instance.curMinigame != MiniGameType.None)
@@ -21,8 +26,33 @@ public class GameStartUI : MonoBehaviour
         else
         {
             SoundUtil.SfxSound("ErrorSound");
-            Debug.Log("미니 게임을 선택하지 않았습니다!");
+            AlertTxt("미니게임을 선택하세요!");
             return;
         }
+    }
+
+    private void AlertTxt(string str)
+    {
+        if (alertTime == 0)
+        {
+            alertTime = 5;
+            StartCoroutine(AlertCoroutine(str));
+        }
+        else
+        {
+            alertTime = 5;
+        }
+    }
+
+    IEnumerator AlertCoroutine(string str)
+    {
+        alertobj.SetActive(true);
+        alertTxt.text = str;
+        while(alertTime > 0)
+        {
+            alertTime--;
+            yield return new WaitForSeconds(0.1f);
+        }
+        alertobj.SetActive(false);
     }
 }
