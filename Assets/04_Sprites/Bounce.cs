@@ -21,6 +21,7 @@ public class Bounce : MonoBehaviour
         if (collision.gameObject.GetComponent<Rigidbody2D>().velocity.y<=0)  //y<=0 는 플레이어가 아래로 이동하는지 아니면 0 에서 멈췄는지 확인하는것
         {
             collision.gameObject.GetComponent<Rigidbody2D>().AddForce(Vector3.up * 300f);
+            Destroy(gameObject);
         }
     }
 }

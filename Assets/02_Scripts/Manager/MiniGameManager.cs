@@ -29,7 +29,7 @@ public abstract class MiniGameManager : MonoBehaviour
 
     public virtual void InitMiniGame()
     {
-       Instantiate(GameManager.Instance.curCharacter.playerPrefab, spawnTransform.position, Quaternion.identity);
+    //   Instantiate(GameManager.Instance.curCharacter.playerPrefab, spawnTransform.position, Quaternion.identity);
         if (TryGetComponent<Character>(out Character character))
         {
             character.curMiniGame = this;
