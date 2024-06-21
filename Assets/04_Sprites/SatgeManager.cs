@@ -40,10 +40,7 @@ public class SatgeManager : MonoBehaviour
 
         }
     }
-    private void OnCollisionEnter2D(Collision2D collision)
-    {
-        Destroy(cloudpre);
-    }
+
     // Update is called once per frame
     void Update()
     {
