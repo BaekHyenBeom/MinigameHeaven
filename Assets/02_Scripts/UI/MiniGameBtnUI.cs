@@ -17,6 +17,7 @@ public class MiniGameBtnUI : MonoBehaviour
 
     public void SelectMiniGame()
     {
+        SoundUtil.ButtonSound();
         GameManager.Instance.curMinigameName = miniGameName;
         GameManager.Instance.curMinigame = gameType;
 

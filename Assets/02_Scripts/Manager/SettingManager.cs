@@ -20,12 +20,15 @@ public class SettingManager : Singleton<SettingManager>
     {
         // 기초 세팅
         Application.targetFrameRate = (int)settings.fpsType;
+        SoundManager.Instance.bgmSource.volume = settings.bgmValue;
+        SoundManager.Instance.sfxSource.volume = settings.sfxValue;
     }
 
     public void SettingBGM(float value)
     {
         settings.bgmValue = value;
         // 사운드 매니저에 반영
+        SoundManager.Instance.bgmSource.volume = settings.bgmValue;
 
         Debug.Log($"현재 SFX 크기 : {settings.bgmValue}");
     }
@@ -34,6 +37,7 @@ public class SettingManager : Singleton<SettingManager>
     {
         settings.sfxValue = value;
         // 사운드 매니저에 반영
+        SoundManager.Instance.sfxSource.volume = settings.sfxValue;
 
         Debug.Log($"현재 SFX 크기 : {settings.sfxValue}");
     }
