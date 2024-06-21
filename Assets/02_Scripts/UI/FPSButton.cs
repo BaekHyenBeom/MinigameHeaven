@@ -27,7 +27,7 @@ public class FPSButton : MonoBehaviour
 
     public void SetFPS()
     {
-        SoundUtil.ButtonSound();
+        SoundUtil.SfxSound("ButtonSound");
         SettingManager.Instance.SettingFPS(curType, enableBtn, disableBtn, enableUI, disableUI);
     }
 }

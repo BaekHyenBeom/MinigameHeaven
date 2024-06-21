@@ -4,25 +4,11 @@ using UnityEngine;
 
 public static class SoundUtil
 {
-    public static void ButtonSound()
+    public static void SfxSound(string sfxname)
     {
         if (SoundManager.Instance != null)
         {
-            SoundManager.Instance.PlaySfxSound("ButtonSound");
-        }
-    }
-    public static void StartSound()
-    {
-        if (SoundManager.Instance != null)
-        {
-            SoundManager.Instance.PlaySfxSound("StartSound");
-        }
-    }
-    public static void ErrorSound()
-    {
-        if (SoundManager.Instance != null)
-        {
-            SoundManager.Instance.PlaySfxSound("ErrorSound");
+            SoundManager.Instance.PlaySfxSound(sfxname);
         }
     }
 }

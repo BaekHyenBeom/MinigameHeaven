@@ -15,7 +15,7 @@ public class CharacterBtnUI : MonoBehaviour
 
     public void SelectCharacter()
     {
-        SoundUtil.ButtonSound();
+        SoundUtil.SfxSound("ButtonSound");
         GameManager.Instance.curCharacter = characterSO;
         GameManager.Instance.CallCharacterDescUI();
         //Debug.Log($"{characterSO.characterName}이(가) 선택되었습니다.");

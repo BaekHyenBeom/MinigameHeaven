@@ -7,7 +7,7 @@ public class EtcBtnUI : MonoBehaviour
 {
     public void GoHomeUI()
     {
-        SoundUtil.ButtonSound();
+        SoundUtil.SfxSound("ButtonSound");
         Time.timeScale = 1.0f;
         SceneManager.LoadScene("MainScene");
     }

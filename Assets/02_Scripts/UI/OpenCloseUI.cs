@@ -9,17 +9,17 @@ public class OpenCloseUI : MonoBehaviour
     
     public void OpenUI()
     {
-        SoundUtil.ButtonSound();
+        SoundUtil.SfxSound("ButtonSound");
         targetUI.SetActive(true);
     }
     public void CloseUI()
     {
-        SoundUtil.ButtonSound();
+        SoundUtil.SfxSound("ButtonSound");
         targetUI.SetActive(false);
     }
     public void OpenAndCloseUI()
     {
-        SoundUtil.ButtonSound();
+        SoundUtil.SfxSound("ButtonSound");
         targetUI.SetActive(true);
         foreach(GameObject obj in ignoreUI)
         {

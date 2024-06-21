@@ -44,7 +44,7 @@ public class SoundSlider : MonoBehaviour
             checktime--;
             yield return new WaitForSecondsRealtime(0.05f);
         }
-        SoundUtil.ButtonSound();
+        SoundUtil.SfxSound("ButtonSound");
         SoundChecking = null;
     }
 }

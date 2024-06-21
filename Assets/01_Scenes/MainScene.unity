@@ -271,7 +271,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c3a508dedbb55c24e8f12271904a5f89, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  curType: -2
+  curType: -1
   minigameName: "\uD14C\uC2A4\uD2B8"
   minigameNameTxt: {fileID: 147723188}
   minigameHighScoreNum: {fileID: 1813998424}
@@ -4922,7 +4922,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c3a508dedbb55c24e8f12271904a5f89, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  curType: -2
+  curType: 0
   minigameName: "\uD3F4\uC9DD\uD3F4\uC9DD"
   minigameNameTxt: {fileID: 1743808697}
   minigameHighScoreNum: {fileID: 1550146418}
@@ -11623,7 +11623,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c3a508dedbb55c24e8f12271904a5f89, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  curType: -2
+  curType: 1
   minigameName: "\uB192\uC774\uB192\uC774"
   minigameNameTxt: {fileID: 2094591695}
   minigameHighScoreNum: {fileID: 946199992}
