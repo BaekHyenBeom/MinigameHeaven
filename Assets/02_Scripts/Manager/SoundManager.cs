@@ -1,6 +1,14 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+
+[Serializable]
+public class Sound
+{
+    public string name;
+    public AudioClip clip;
+}
 
 public class SoundManager : Singleton<SoundManager>
 {
@@ -8,24 +16,42 @@ public class SoundManager : Singleton<SoundManager>
     public AudioSource sfxSource;
 
     [Header("SoundClip Setting")]
-    public AudioClip buttonSound;
-    public AudioClip StartSound;
-    public AudioClip ErrorSound;
+    public Sound[] bgmSounds;
+    public Sound[] sfxSounds;
 
     // Start is called before the first frame update
 
-    public void PlayButtonSound()
+    void Start()
     {
-        sfxSource.PlayOneShot(buttonSound);
+        PlayBgm("MainBgm");
     }
 
-    public void PlayStartSound()
+    public void PlayBgm(string name)
     {
-        sfxSource.PlayOneShot(StartSound);
+        Sound s = Array.Find(bgmSounds, x => x.name == name);
+
+        if (s == null)
+        {
+            Debug.Log("사운드가 없습니다.");
+        }
+        else
+        {
+            bgmSource.clip = s.clip;
+            bgmSource.Play();
+        }
     }
 
-    public void PlayErrorSound()
+    public void PlaySfxSound(string name)
     {
-        sfxSource.PlayOneShot(ErrorSound);
+        Sound s = Array.Find(sfxSounds, x => x.name == name);
+
+        if (s == null)
+        {
+            Debug.Log("사운드가 없습니다.");
+        }
+        else
+        {
+            sfxSource.PlayOneShot(s.clip);
+        }
     }
 }

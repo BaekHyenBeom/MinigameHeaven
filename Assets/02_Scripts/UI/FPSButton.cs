@@ -9,25 +9,25 @@ public class FPSButton : MonoBehaviour
     public Image disableBtn;
     public FPSType curType;
 
-    private Color disableColor = new Color(0.5f, 0.5f, 0.5f);
-    private Color enableColor = new Color(1f, 1f, 1f);
+    public Sprite enableUI;
+    public Sprite disableUI;
 
 
     private void OnEnable()
     {
         if (SettingManager.Instance.settings.fpsType == curType)
         {
-            enableBtn.color = enableColor;
+            enableBtn.sprite = enableUI;
         }
         else
         {
-            enableBtn.color = disableColor;
+            enableBtn.sprite = disableUI;
         }
     }
 
     public void SetFPS()
     {
         SoundUtil.ButtonSound();
-        SettingManager.Instance.SettingFPS(curType, enableBtn, disableBtn);
+        SettingManager.Instance.SettingFPS(curType, enableBtn, disableBtn, enableUI, disableUI);
     }
 }

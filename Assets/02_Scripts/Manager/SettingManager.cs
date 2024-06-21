@@ -13,9 +13,6 @@ public class SettingManager : Singleton<SettingManager>
 {
     public SettingSO settings;
 
-    private Color disableColor = new Color(0.5f, 0.5f, 0.5f);
-    private Color enableColor = new Color(1f, 1f, 1f);
-
     void Start()
     {
         // 기초 세팅
@@ -42,10 +39,10 @@ public class SettingManager : Singleton<SettingManager>
         Debug.Log($"현재 SFX 크기 : {settings.sfxValue}");
     }
 
-    public void SettingFPS(FPSType type, Image enableBtn, Image disableBtn)
+    public void SettingFPS(FPSType type, Image enableBtn, Image disableBtn, Sprite enable, Sprite disable)
     {
-        enableBtn.color = enableColor;
-        disableBtn.color = disableColor;
+        enableBtn.sprite = enable;
+        disableBtn.sprite = disable;
         settings.fpsType = type;
 
         Application.targetFrameRate = (int)settings.fpsType;

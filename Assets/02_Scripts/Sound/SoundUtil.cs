@@ -8,21 +8,21 @@ public static class SoundUtil
     {
         if (SoundManager.Instance != null)
         {
-            SoundManager.Instance.PlayButtonSound();
-        }
-    }
-    public static void ErrorSound()
-    {
-        if (SoundManager.Instance != null)
-        {
-            SoundManager.Instance.PlayErrorSound();
+            SoundManager.Instance.PlaySfxSound("ButtonSound");
         }
     }
     public static void StartSound()
     {
         if (SoundManager.Instance != null)
         {
-            SoundManager.Instance.PlayStartSound();
+            SoundManager.Instance.PlaySfxSound("StartSound");
+        }
+    }
+    public static void ErrorSound()
+    {
+        if (SoundManager.Instance != null)
+        {
+            SoundManager.Instance.PlaySfxSound("ErrorSound");
         }
     }
 }
