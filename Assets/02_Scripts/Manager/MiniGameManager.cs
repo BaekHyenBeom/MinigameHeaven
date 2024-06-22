@@ -11,7 +11,8 @@ public enum MiniGameType
     Test = -1,
     RopeJump = 0,
     HighJump,
-    SwimSwim
+    SwimSwim,
+    GoGoRun,
 }
 
 public abstract class MiniGameManager : MonoBehaviour
