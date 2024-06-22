@@ -8,6 +8,7 @@ public class GameSelectUI : MonoBehaviour
 
     public void OpenUIAndInitSelect()
     {
+        SoundUtil.SfxSound("ButtonSound");
         targetUI.SetActive(true);
         GameManager.Instance.curMinigame = MiniGameType.None;
         GameManager.Instance.curMinigameName = null;
