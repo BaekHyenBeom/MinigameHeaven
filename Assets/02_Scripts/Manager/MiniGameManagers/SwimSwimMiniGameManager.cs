@@ -7,6 +7,7 @@ public class SwimSwimMiniGameManager : MiniGameManager
 {
     private float gameTime = 0;
     public ObstaclePool obstaclePool { get; private set; }
+    public SwimSwimAir swimSwimAir;
 
     public void Awake()
     {
@@ -24,6 +25,9 @@ public class SwimSwimMiniGameManager : MiniGameManager
         curScore = 0;
         Application.targetFrameRate = 30; // 환경설정에 프레임 조절이 들어가면 거기로 옮기기
         InvokeRepeating("ObstacleCreate", 0.0f, 1.5f); // 코루틴으로도 가능할 듯
+
+        SwimSwimAir air = swimSwimAir.GetComponent<SwimSwimAir>();
+        air.swimSwimMiniGameManager = GetComponent<SwimSwimMiniGameManager>();
     }
 
     private void Update()
@@ -35,13 +39,30 @@ public class SwimSwimMiniGameManager : MiniGameManager
 
     void ObstacleCreate()
     {
-        GameObject obj = obstaclePool.SpawnFromPool("Obstacle");
+        int fishTypeNum = Random.Range(0, 3);
+        string fishType;
+
+        switch (fishTypeNum)
+        {
+            case 0: fishType = "FishBig"; break;
+            case 1: fishType = "FishDart"; break;
+            case 2: fishType = "FishMid"; break;
+            default: fishType = "FishBig"; break;
+        }
+
+        FishCreate(fishType);
+    }
+
+    void FishCreate(string fishType)
+    {
+        GameObject obj = obstaclePool.SpawnFromPool(fishType);
+
         SwimSwimObstacle obstacle = obj.GetComponent<SwimSwimObstacle>();
         obstacle.swimSwimMiniGameManager = GetComponent<SwimSwimMiniGameManager>();
 
-        float size = Random.Range(0.4f, 1.4f);
-        obj.transform.localScale = new Vector2(size * 2, size);
-        float y = Random.Range(-4.0f, 5.0f);
+        float size = Random.Range(4.0f, 6.0f);
+        obj.transform.localScale = new Vector2(size, size);
+        float y = Random.Range(-2.5f, 5.0f);
         obj.transform.position = new Vector2(5f, y);
     }
 
