@@ -7,11 +7,6 @@ public class SwimSwimObstacle : MonoBehaviour
     public SwimSwimMiniGameManager swimSwimMiniGameManager;
     float curSpeed = 0.1f;
 
-    public void Awake()
-    {
-        swimSwimMiniGameManager = GetComponent<SwimSwimMiniGameManager>();
-    }
-
     private void Start()
     {
         StartCoroutine(CurSpeedChange());
@@ -24,7 +19,7 @@ public class SwimSwimObstacle : MonoBehaviour
 
     IEnumerator CurSpeedChange()
     {
-        curSpeed = Random.Range(0.05f, 0.15f);
+        curSpeed = Random.Range(0.08f, 0.15f);
         yield return new WaitForSeconds(150.0f); // 5초마다 변속: 프레임이 30이라면 150, 60이라면 300
     }
 
@@ -32,7 +27,7 @@ public class SwimSwimObstacle : MonoBehaviour
     {
         if (other.gameObject.CompareTag("Player"))
         {
-            Debug.Log("게임 오버!");
+            // Debug.Log("게임 오버!");
             swimSwimMiniGameManager.GameOver();
         }
     }

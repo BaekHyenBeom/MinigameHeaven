@@ -22,6 +22,7 @@ public class DataManager : Singleton<DataManager>
         gameHighScore.Add(MiniGameType.Test, 0);
         gameHighScore.Add(MiniGameType.RopeJump, 0);
         gameHighScore.Add(MiniGameType.HighJump, 0);
+        gameHighScore.Add(MiniGameType.GoGoRun, 0);
         gameHighScore.Add(MiniGameType.SwimSwim, 0);
 
 
@@ -45,12 +46,12 @@ public class DataManager : Singleton<DataManager>
         saveStream.Write(saveData, 0, saveData.Length);
         saveStream.Close();
 
-        Debug.Log("저장 완료!");
+        //Debug.Log("저장 완료!");
     }
 
     public void Load()
     {
-        Debug.Log("불러오기 시도");
+        //Debug.Log("불러오기 시도");
 
         string filepath = Application.dataPath + "/SaveFile/minigameHighScore.json";
         if (File.Exists(filepath))
@@ -63,10 +64,12 @@ public class DataManager : Singleton<DataManager>
 
             gameHighScore = JsonConvert.DeserializeObject<Dictionary<MiniGameType, int>>(jsonLoadData);
 
+            /* // 표시용
             foreach (var data in gameHighScore)
             {
                 Debug.Log($"{data.Key}, {data.Value}");
             }
+            */
         }
     }
 
@@ -92,6 +95,7 @@ public class DataManager : Singleton<DataManager>
             if (curScore > gameHighScore[gameType])
             {
                 gameHighScore[gameType] = curScore;
+                Save(); // 갱신될 때마다 세이브할 것
                 return true;
             }
         }

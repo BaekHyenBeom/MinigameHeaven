@@ -12,28 +12,26 @@ public class Character : MonoBehaviour
     public CharacterSO curCharacter;
     public Animator curAnimator;
 
+   
+
     public virtual void IdleAnim()
     {
-        Debug.Log("구현되지 않음.");
     }
 
     public virtual void MoveAnim()
     {
-        Debug.Log("구현되지 않음.");
+
     }
 
     public virtual void JumpAnim()
     {
-        Debug.Log("구현되지 않음.");
     }
 
     public virtual void HitAnim()
     {
-        Debug.Log("구현되지 않음.");
     }
 
     public virtual void GameOverAnim()
     {
-        Debug.Log("구현되지 않음.");
     }
 }

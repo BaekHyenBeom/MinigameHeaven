@@ -13,6 +13,6 @@ MonoBehaviour:
   m_Name: Raccoon
   m_EditorClassIdentifier: 
   characterName: "\uB77C\uCFE4"
-  playerPrefab: {fileID: 8583594701090144120, guid: 47892f4aa98ce6745b22c83cd31240bf, type: 3}
+  playerPrefab: {fileID: 7095373190827867167, guid: 9e3f897f5dc26534080bdc89f283989b, type: 3}
   characterSprite: {fileID: -933229146, guid: 2218ed31c534e454698f9a24f272620e, type: 3}
   characterAnimator: []

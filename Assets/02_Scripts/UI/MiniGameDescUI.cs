@@ -12,6 +12,7 @@ public class MiniGameDescUI : MonoBehaviour
     {
         //Debug.Log("이벤트 연결");
         GameManager.Instance.MiniGameDescUI += DescSetting;
+        GameManager.Instance.ActiveMiniGame();
     }
 
     private void OnDisable()
