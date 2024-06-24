@@ -23,4 +23,6 @@ public class GameManager : Singleton<GameManager>
     {
        CharacterDescUI?.Invoke();
     }
+
+
 }

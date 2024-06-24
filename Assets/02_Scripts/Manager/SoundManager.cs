@@ -19,13 +19,6 @@ public class SoundManager : Singleton<SoundManager>
     public Sound[] bgmSounds;
     public Sound[] sfxSounds;
 
-    // Start is called before the first frame update
-
-    void Start()
-    {
-        PlayBgm("MainBgm");
-    }
-
     public void PlayBgm(string name)
     {
         Sound s = Array.Find(bgmSounds, x => x.name == name);
@@ -36,6 +29,7 @@ public class SoundManager : Singleton<SoundManager>
         }
         else
         {
+            bgmSource.loop = true; // <-- ¿ä·¸°Ô
             bgmSource.clip = s.clip;
             bgmSource.Play();
         }

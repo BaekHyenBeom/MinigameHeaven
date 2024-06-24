@@ -6,19 +6,20 @@ public class GoGoRunCharacter : Character
 {
     private readonly int hashRun = Animator.StringToHash("isRun");
     private readonly int hashHit = Animator.StringToHash("isHit");
+    private readonly int hashCrouch = Animator.StringToHash("isCrouch");
 
-    private void OnEnable()
+
+    IEnumerator Start()
     {
-        
+        yield return new WaitUntil(() => GameManager.Instance.curMiniGameScript != null);
+
+        GameManager.Instance.curMiniGameScript.OnStart += MoveAnim;
     }
 
-    private void OnDisable()
-    {
-        
-    }
     public override void GameOverAnim()
     {
         base.GameOverAnim();
+        HitAnim();
     }
 
     public override void HitAnim()
@@ -39,6 +40,11 @@ public class GoGoRunCharacter : Character
         base.MoveAnim();
 
         curAnimator.SetBool(hashRun, true);
+    }
+
+    public void CrouchAnim(bool active)
+    {
+        curAnimator.SetBool(hashCrouch, active);
     }
 
 
