@@ -5,6 +5,7 @@ using UnityEngine;
 
 public class Parallax : MonoBehaviour
 {
+    public GoGoRunManager goGoRunManager;
     // 오전 오후 저녁 밤 -> 하루를 720초로 치환 -> 각 타임은 180초(3분)
     private float day = 240f;
     private float currentTimer = 0f;
@@ -22,6 +23,9 @@ public class Parallax : MonoBehaviour
 
     private Transform[] unitOfBackgrounds;
 
+    [SerializeField]
+    private Transform floor;
+
     private Dictionary<int, SpriteRenderer[]> backgrounds = new Dictionary<int, SpriteRenderer[]>();
 
 
@@ -34,6 +38,16 @@ public class Parallax : MonoBehaviour
         Init();
     }
 
+    private void OnEnable()
+    {
+        goGoRunManager.onGameStart += () => isGameStart = true;
+    }
+
+    private void OnDisable()
+    {
+        goGoRunManager.onGameStart -= () => isGameStart = true;
+
+    }
     private void Init()
     {
         unitOfBackgrounds = new Transform[transform.childCount];
@@ -57,6 +71,7 @@ public class Parallax : MonoBehaviour
         if(isGameStart)
         {
             SetTime();
+            ScrollFloor();
         }
     }
 
@@ -94,21 +109,19 @@ public class Parallax : MonoBehaviour
                 backgrounds[CurUnitOfTime][i].transform.position = Vector3.zero;
             }
         }
-        // 현재 분기와 이전 분기가 2이상 차이나면 작동. 다음 배경을 키고 차이를 줄임
+    }
 
+    private void ScrollFloor()
+    {
+        Vector3 floorPos = floor.position;
+        Vector3 nextFloorPos = Vector3.left * (speed * 0.1f * backgrounds[CurUnitOfTime].Length) * Time.deltaTime;
 
-        //for (int i = 0; i < backgrounds.Count; i++)
-        //{
-        //    Vector3 curPos = backgrounds[i].transform.position;
-        //    Vector3 nextPos = Vector3.left * (speed * i * 0.1f) * Time.deltaTime;
+        floor.position = floorPos + nextFloorPos;
 
-        //    backgrounds[i].transform.position = curPos + nextPos;
-
-        //    if (backgrounds[i].transform.position.x <= -backgrounds[i].bounds.size.x)
-        //    {
-        //        backgrounds[i].transform.position = Vector3.zero;
-        //    }
-        //}
+        if (floor.position.x <= -18.0f)
+        {
+            floor.position = Vector3.zero;
+        }
     }
     private void ChangeUnitOfTime()
     {
