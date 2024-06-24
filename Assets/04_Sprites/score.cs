@@ -19,12 +19,13 @@ public class Score : MonoBehaviour
         if (score  > (int)upController.transform.position.y)
         {
             return;
-        }
-        score =(int)upController.transform.position.y ;
 
+        }
+
+        score =(int)upController.transform.position.y ;
         curScoreNumTxt.text = $"{score} ";
 
-        if ((int)upController.transform.position.y < - 10f)
+        if ((int)upController.transform.position.y <= score - 10f)
         {
             StageManager.Instance.GameOver();
         }
