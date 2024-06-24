@@ -3,18 +3,24 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UIElements;
 
-public class SatgeManager : MiniGameManager
+public class StageManager : MiniGameManager
 {
-
+    public static StageManager Instance;
     public ObstaclePool obstaclePool { get; private set; }
 
-    float prex = -100;
-    float prey = -2.74f;
+    public float prex = -100;
+    public float prey = -2.74f;
 
+
+ 
 
     private void Awake()
     {
-      
+      if (Instance == null)
+        {
+            Instance = this;
+        }
+
         curScore = 0;
         gameType = MiniGameType.HighJump;
 
@@ -27,8 +33,7 @@ public class SatgeManager : MiniGameManager
 
         for (int i = 0; i < 20; i++)
         {
-
-        createClouds();
+               createClouds();
         }
     }
 
@@ -46,15 +51,8 @@ public class SatgeManager : MiniGameManager
        prex = ranx;
        prey = rany;
 
-        
-
-        
-     // Instantiate(obj, new Vector2(ranx, rany), Quaternion.identity);
-       
-
-
     }
-
+   
     // Update is called once per frame
     void Update()
     {
