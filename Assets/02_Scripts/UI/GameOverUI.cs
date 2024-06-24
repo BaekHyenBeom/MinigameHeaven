@@ -1,18 +1,13 @@
 using System.Collections;
 using System.Collections.Generic;
+using TMPro;
 using UnityEngine;
 
 public class GameOverUI : MonoBehaviour
 {
-    // Start is called before the first frame update
-    void Start()
-    {
-        
-    }
+    [SerializeField] private TextMeshProUGUI curScoreNum;
+    [SerializeField] private TextMeshProUGUI highScoreNum;
+    [SerializeField] private TextMeshProUGUI newRecordTxt;
 
-    // Update is called once per frame
-    void Update()
-    {
-        
-    }
+    
 }
