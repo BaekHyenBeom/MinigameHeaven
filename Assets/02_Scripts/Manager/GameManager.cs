@@ -9,6 +9,7 @@ public class GameManager : Singleton<GameManager>
     public CharacterSO curCharacter;
     public MiniGameType curMinigame;
     public string curMinigameName;
+    public MiniGameManager curMiniGameScript;
 
     public event Action MiniGameDescUI;
     public event Action CharacterDescUI;

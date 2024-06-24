@@ -84,4 +84,21 @@ public class DataManager : Singleton<DataManager>
         }
         return totalScore;
     }
+
+    public bool RenewalHighScore(int curScore, MiniGameType gameType)
+    {
+        if (gameHighScore.ContainsKey(gameType))
+        {
+            if (curScore > gameHighScore[gameType])
+            {
+                gameHighScore[gameType] = curScore;
+                return true;
+            }
+        }
+        else
+        {
+            Debug.Log("없는 게임 타입입니다.");
+        }
+        return false;
+    }
 }

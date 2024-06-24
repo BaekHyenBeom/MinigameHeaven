@@ -11,7 +11,8 @@ public enum MiniGameType
     Test = -1,
     RopeJump = 0,
     HighJump,
-    SwimSwim
+    SwimSwim,
+    GoGoRun,
 }
 
 public abstract class MiniGameManager : MonoBehaviour
@@ -27,16 +28,20 @@ public abstract class MiniGameManager : MonoBehaviour
     public TextMeshProUGUI curScoreNum;
     public TextMeshProUGUI topScoreNum;
 
+    public event Action OnStart;
+    public event Action OnPause;
+
     public virtual void InitMiniGame()
     {
-     //  Instantiate(GameManager.Instance.curCharacter.playerPrefab, spawnTransform.position, Quaternion.identity);
+        //Instantiate(GameManager.Instance.curCharacter.playerPrefab, spawnTransform.position, Quaternion.identity);
+        GameManager.Instance.curMiniGameScript = this;
         if (TryGetComponent<Character>(out Character character))
         {
             character.curMiniGame = this;
             character.curCharacter = GameManager.Instance.curCharacter;
         }
 
-        // Test¿ë
+        // Testï¿½ï¿½
         //Invoke("GameOver", 5f);
     }
 
@@ -44,6 +49,16 @@ public abstract class MiniGameManager : MonoBehaviour
     {
         Time.timeScale = 0.0f;
         GameOverPanel.SetActive(true);
+    }
+
+    public virtual void CallStart()
+    {
+
+    }
+
+    public virtual void CallPause()
+    {
+
     }
 
     public abstract void HighScoreRecord();
