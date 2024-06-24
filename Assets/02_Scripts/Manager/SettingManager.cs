@@ -27,7 +27,7 @@ public class SettingManager : Singleton<SettingManager>
         // 사운드 매니저에 반영
         SoundManager.Instance.bgmSource.volume = settings.bgmValue;
 
-        Debug.Log($"현재 SFX 크기 : {settings.bgmValue}");
+        //Debug.Log($"현재 BGM 크기 : {settings.bgmValue}");
     }
 
     public void SettingSFX(float value)
@@ -36,7 +36,7 @@ public class SettingManager : Singleton<SettingManager>
         // 사운드 매니저에 반영
         SoundManager.Instance.sfxSource.volume = settings.sfxValue;
 
-        Debug.Log($"현재 SFX 크기 : {settings.sfxValue}");
+        //Debug.Log($"현재 SFX 크기 : {settings.sfxValue}");
     }
 
     public void SettingFPS(FPSType type, Image enableBtn, Image disableBtn, Sprite enable, Sprite disable)
@@ -46,6 +46,6 @@ public class SettingManager : Singleton<SettingManager>
         settings.fpsType = type;
 
         Application.targetFrameRate = (int)settings.fpsType;
-        Debug.Log($"현재 프레임 속도 {Application.targetFrameRate}");
+        //Debug.Log($"현재 프레임 속도 {Application.targetFrameRate}");
     }
 }
