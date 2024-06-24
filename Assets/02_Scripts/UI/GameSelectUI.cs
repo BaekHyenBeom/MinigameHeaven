@@ -12,6 +12,7 @@ public class GameSelectUI : MonoBehaviour
         targetUI.SetActive(true);
         GameManager.Instance.curMinigame = MiniGameType.None;
         GameManager.Instance.curMinigameName = null;
+        GameManager.Instance.ChangeBtnColor(null, true, null);
         GameManager.Instance.CallMinigameDescUI();
     }
 }

@@ -11,4 +11,12 @@ public static class SoundUtil
             SoundManager.Instance.PlaySfxSound(sfxname);
         }
     }
+
+    public static void BgmSound(string bgmname)
+    {
+        if (SoundManager.Instance != null)
+        {
+            SoundManager.Instance.PlayBgm(bgmname);
+        }
+    }
 }
