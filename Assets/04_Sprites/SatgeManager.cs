@@ -53,12 +53,6 @@ public class StageManager : MiniGameManager
 
     }
    
-    // Update is called once per frame
-    void Update()
-    {
-        
-    }
-
     public override void HighScoreRecord()
     {
         throw new System.NotImplementedException();
