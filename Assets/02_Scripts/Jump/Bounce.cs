@@ -15,7 +15,7 @@ public class Bounce : MonoBehaviour
         {
 
             //Debug.Log("Ãæµ¹");
-            collision.gameObject.GetComponent<Rigidbody2D>().AddForce(Vector3.up * 300f, ForceMode2D.Force);
+            collision.gameObject.GetComponent<Rigidbody2D>().AddForce(Vector3.up * 450f, ForceMode2D.Force);
             
           
 
