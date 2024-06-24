@@ -24,13 +24,13 @@ public class StageManager : MiniGameManager
         curScore = 0;
         gameType = MiniGameType.HighJump;
 
-        InitMiniGame();
         obstaclePool = GetComponent<ObstaclePool>();
      
     }
     private void Start()
     {
 
+        InitMiniGame();
         for (int i = 0; i < 20; i++)
         {
                createClouds();
@@ -43,7 +43,7 @@ public class StageManager : MiniGameManager
        // CloudSpawnController cloudSpawnController = obj.GetComponent<CloudSpawnController>();
        // cloudSpawnController.satgeManager=GetComponent<SatgeManager>();
      
-        float ranx = Random.Range(-2.2f, 2.2f);
+        float ranx = Random.Range(-2.5f, 3.5f);
         float rany = Random.Range(prey + 0.5f, prey + 2);
         
         obj.transform.position = new Vector2(ranx,rany);
@@ -52,6 +52,8 @@ public class StageManager : MiniGameManager
        prey = rany;
 
     }
+
+
    
     public override void HighScoreRecord()
     {

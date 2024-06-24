@@ -16,8 +16,18 @@ public class Score : MonoBehaviour
 
     public void NoWScore()
     {
-        score = (int)upController.transform.position.y;
+        if (score  > (int)upController.transform.position.y)
+        {
+            return;
+        }
+        score =(int)upController.transform.position.y ;
+
         curScoreNumTxt.text = $"{score} ";
+
+        if ((int)upController.transform.position.y < - 10f)
+        {
+            StageManager.Instance.GameOver();
+        }
 
     }
     public void HighScore()
@@ -26,8 +36,8 @@ public class Score : MonoBehaviour
         {
             high = score;
             topScoreNumTxt.text = $"{high} ";
-            //    newHight.text = $"{score} M";
-            PlayerPrefs.SetInt("Best", high);
+            
+          PlayerPrefs.SetInt("Best", high);
            
         }
     }
@@ -36,15 +46,15 @@ public class Score : MonoBehaviour
 
     void Start()
     {
-        high = PlayerPrefs.GetInt("Best");
+       high = PlayerPrefs.GetInt("Best");
         topScoreNumTxt.text = $"{high} ";
 
     }
-
-    // Update is called once per frame
-    void Update()
+    private void FixedUpdate()
     {
+
         NoWScore();
         HighScore();
     }
+    
 }
