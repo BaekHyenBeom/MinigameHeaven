@@ -9,10 +9,7 @@ public class GoGoRunDestroyer : MonoBehaviour
     {
         if(collision.CompareTag("Trap"))
         {
-            if (!trapPool.Destory(collision.gameObject))
-            {
-                Destroy(collision.gameObject);
-            }
+            collision.gameObject.SetActive(false);
         }
 
     }

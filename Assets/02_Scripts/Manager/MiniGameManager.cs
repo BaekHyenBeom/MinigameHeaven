@@ -53,11 +53,12 @@ public abstract class MiniGameManager : MonoBehaviour
 
     public virtual void CallStart()
     {
-
+        OnStart?.Invoke();
     }
 
     public virtual void CallPause()
     {
+        OnPause?.Invoke();
 
     }
 

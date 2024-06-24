@@ -15,7 +15,7 @@ public class GameManager : Singleton<GameManager>
     public event Action MiniGameDescUI;
     public event Action CharacterDescUI;
 
-    // ╪╠ец╣х ╟е г╔╫ц©К
+    // О©╫О©╫О©╫ц╣О©╫ О©╫О©╫ г╔О©╫ц©О©╫
     private Color selectedColor = new Color(0.5f, 0.5f, 0.5f, 1f);
     private Color defaultColor = new Color(175 / 255f, 175 / 255f, 175 / 255f, 1f);
 
