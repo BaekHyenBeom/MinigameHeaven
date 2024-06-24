@@ -16,21 +16,25 @@ public class Score : MonoBehaviour
 
     public void NoWScore()
     {
-        if (score  > (int)upController.transform.position.y)
+        if (score < (int)upController.transform.position.y)
         {
-            return;
-
+            score = (int)upController.transform.position.y;
+            curScoreNumTxt.text = $"{score} ";
         }
 
-        score =(int)upController.transform.position.y ;
-        curScoreNumTxt.text = $"{score} ";
-
-        if ((int)upController.transform.position.y <= score - 10f)
+        Vector3 view = Camera.main.WorldToScreenPoint(upController.transform.position);
+        if (view.y < -50)
         {
             StageManager.Instance.GameOver();
+            return;
         }
 
+
     }
+
+  
+    
+    
     public void HighScore()
     {
         if (high < score)
@@ -56,6 +60,7 @@ public class Score : MonoBehaviour
 
         NoWScore();
         HighScore();
+       
     }
     
 }
