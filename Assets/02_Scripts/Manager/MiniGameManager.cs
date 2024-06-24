@@ -11,7 +11,8 @@ public enum MiniGameType
     Test = -1,
     RopeJump = 0,
     HighJump,
-    SwimSwim
+    SwimSwim,
+    GoGoRun,
 }
 
 public abstract class MiniGameManager : MonoBehaviour
@@ -36,7 +37,7 @@ public abstract class MiniGameManager : MonoBehaviour
             character.curCharacter = GameManager.Instance.curCharacter;
         }
 
-        // Test¿ë
+        // Testï¿½ï¿½
         //Invoke("GameOver", 5f);
     }
 
