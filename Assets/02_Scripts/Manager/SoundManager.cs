@@ -48,4 +48,10 @@ public class SoundManager : Singleton<SoundManager>
             sfxSource.PlayOneShot(s.clip);
         }
     }
+
+    public void StopBgm()
+    {
+        if(bgmSource.isPlaying)
+            bgmSource.Stop();
+    }
 }

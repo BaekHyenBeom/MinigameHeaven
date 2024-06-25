@@ -70,12 +70,14 @@ public class GoGoRunController : MonoBehaviour, IController
             if (context.phase == InputActionPhase.Started && canJumpCount > 0)
             {
                 isCrouch = true;
+                SoundManager.Instance.PlaySfxSound("Crouch");
                 character.CrouchAnim(true);
             }
 
             else if (context.phase == InputActionPhase.Canceled && canJumpCount > 0)
             {
                 isCrouch = false;
+                SoundManager.Instance.PlaySfxSound("CrouchUp");
                 character.CrouchAnim(false);
             }
         }
