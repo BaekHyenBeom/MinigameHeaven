@@ -70,7 +70,7 @@ public abstract class MiniGameManager : MonoBehaviour
 
     public void InitPlayer()
     {
-        curPlayerObject =Instantiate(GameManager.Instance.curCharacter.GamePrefabs[(int)GameManager.Instance.curMinigame], spawnTransform);
+        curPlayerObject =Instantiate(GameManager.Instance.curCharacter.GamePrefabs[(int)GameManager.Instance.curMinigame], spawnTransform.position, Quaternion.identity);
     }
 
     public virtual void GameOver()

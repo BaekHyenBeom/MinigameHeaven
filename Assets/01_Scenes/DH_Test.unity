@@ -339,13 +339,16 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   curScore: 0
   gameType: 1
-  spawnTransform: {fileID: 0}
+  curPlayerObject: {fileID: 0}
+  spawnTransform: {fileID: 1487805856}
   GameOverPanel: {fileID: 432929614}
   curScoreNum: {fileID: 6207326551601066257}
   topScoreNum: {fileID: 6207326551601066256}
   gameOverUI: {fileID: 432929613}
+  collider: {fileID: 0}
   prex: -100
   prey: -2.74
+  curPlayerTransform: {fileID: 0}
 --- !u!1001 &941432303
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -428,7 +431,7 @@ Transform:
   m_GameObject: {fileID: 1487805855}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -0.25, y: 2.8, z: 0}
+  m_LocalPosition: {x: -0.25, y: 2.46, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -965,6 +968,7 @@ MonoBehaviour:
   topScoreNumTxt: {fileID: 6207326551601066256}
   upController: {fileID: 0}
   curMiniGame: {fileID: 864622977}
+  curStageManager: {fileID: 0}
 --- !u!4 &6406946261684788178
 Transform:
   m_ObjectHideFlags: 0

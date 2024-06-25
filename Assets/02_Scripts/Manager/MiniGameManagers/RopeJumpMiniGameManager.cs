@@ -13,6 +13,8 @@ public class RopeJumpMiniGameManager : MiniGameManager
         gameType = MiniGameType.RopeJump;
 
         InitMiniGame();
+        SetScore();
+        InitPlayer();
     }
 
 
@@ -20,6 +22,10 @@ public class RopeJumpMiniGameManager : MiniGameManager
     private void Update()
     {
         curScoreNum.text = curScore.ToString();
+        if (curScore > DataManager.Instance.GiveHighScore(MiniGameType.RopeJump))
+        {
+            topScoreNum.text = curScore.ToString();
+        }
     }
 
     public override void HighScoreRecord()

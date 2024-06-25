@@ -16,7 +16,7 @@ MonoBehaviour:
   playerPrefab: {fileID: 8583594701090144120, guid: 47892f4aa98ce6745b22c83cd31240bf, type: 3}
   characterSprite: {fileID: -6447722072507503168, guid: 10f3cacccb0c4c547be76836eba20664, type: 3}
   GamePrefabs:
-  - {fileID: 0}
+  - {fileID: 6590016716817845819, guid: bd4bbb846d4b98f46adf24d6651f4873, type: 3}
   - {fileID: 2894402220879250476, guid: c2384b94dd6d17344a469d1781692173, type: 3}
   - {fileID: 0}
   - {fileID: 8583594701090144120, guid: 0fd116a87991a2e48ade4add7a71ddd3, type: 3}
