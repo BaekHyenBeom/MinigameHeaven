@@ -83,6 +83,10 @@ MonoBehaviour:
         m_CallState: 2
     m_ActionId: b649c98d-e0c7-4072-a41c-6f36603bcc76
     m_ActionName: Player/Jump[/Keyboard/space]
+  - m_PersistentCalls:
+      m_Calls: []
+    m_ActionId: dfd00aaa-2661-4dfb-970c-bab0191d2623
+    m_ActionName: Player/Crouch[/Keyboard/leftCtrl]
   m_NeverAutoSwitchControlSchemes: 0
   m_DefaultControlScheme: 
   m_DefaultActionMap: Player
@@ -193,7 +197,7 @@ BoxCollider2D:
   m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: 0, y: 0}
+  m_Offset: {x: 0.0006941557, y: -0.047987223}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
@@ -204,7 +208,7 @@ BoxCollider2D:
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 0.4, y: 0.6}
+  m_Size: {x: 0.32086968, y: 0.4738536}
   m_EdgeRadius: 0
 --- !u!50 &2044191076253624630
 Rigidbody2D:
@@ -261,3 +265,5 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   rd2D: {fileID: 0}
+  character: {fileID: 0}
+  jumpPower: 6

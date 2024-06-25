@@ -102,7 +102,8 @@ public class GoGoRunTrapSpawner : ObstaclePool
         // -2.5f ~ -3.5f
         while (isStart)
         {
-            yield return CoroutineHelper.WaitForSeconds(5.0f);
+            int waitTime = Random.Range(5, 8);
+            yield return CoroutineHelper.WaitForSeconds(waitTime);
             GameObject go = SpawnFromPool("Saw");
             go.transform.position = new Vector3(10, Random.Range
                 (-3.5f, -2.6f), 0);
@@ -115,7 +116,7 @@ public class GoGoRunTrapSpawner : ObstaclePool
     {
         while(isStart)
         {
-            int waitTime = Random.Range(5, 10);
+            int waitTime = Random.Range(8, 15);
             yield return CoroutineHelper.WaitForSeconds(waitTime);
             GameObject go = SpawnFromPool("Fire");
             go.transform.position = new Vector3(15, go.transform.position.y, 0);
@@ -126,7 +127,14 @@ public class GoGoRunTrapSpawner : ObstaclePool
 
     private IEnumerator CoSpawnSpike()
     {
-        yield return null;
+        while (isStart)
+        {
+            int waitTime = Random.Range(5, 10);
+            yield return CoroutineHelper.WaitForSeconds(waitTime);
+            GameObject go = SpawnFromPool("Spike");
+            go.transform.position = new Vector3(20, go.transform.position.y, 0);
+        }
+        yield break;
     }
 
 
@@ -138,12 +146,26 @@ public class GoGoRunTrapSpawner : ObstaclePool
 
     private IEnumerator CoSpawnSpikeHead()
     {
-        yield return null;
+        while (isStart)
+        {
+            int waitTime = Random.Range(10, 20);
+            yield return CoroutineHelper.WaitForSeconds(waitTime);
+            GameObject go = SpawnFromPool("SpikeHead");
+            go.transform.position = new Vector3(13, go.transform.position.y, 0);
+        }
+        yield break;
     }
 
 
     private IEnumerator CoSpawnTrampoline()
     {
-        yield return null;
+        while (isStart)
+        {
+            int waitTime = Random.Range(5, 15);
+            yield return CoroutineHelper.WaitForSeconds(waitTime);
+            GameObject go = SpawnFromPool("TramPoline");
+            go.transform.position = new Vector3(20, -3.5f, 0);
+        }
+        yield break;
     }
 }

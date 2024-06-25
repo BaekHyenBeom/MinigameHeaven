@@ -86,6 +86,9 @@ public class GoGoRunManager : MiniGameManager
     public override void GameOver()
     {
         base.GameOver();
+
+        SoundManager.Instance.StopBgm();
+        SoundManager.Instance.PlaySfxSound("Fail");
     }
 
     public override void HighScoreRecord()

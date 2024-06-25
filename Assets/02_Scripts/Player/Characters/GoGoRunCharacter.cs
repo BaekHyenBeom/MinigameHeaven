@@ -47,5 +47,4 @@ public class GoGoRunCharacter : Character
         curAnimator.SetBool(hashCrouch, active);
     }
 
-
 }
