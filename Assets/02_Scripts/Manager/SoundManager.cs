@@ -2,6 +2,7 @@ using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 [Serializable]
 public class Sound
@@ -18,6 +19,19 @@ public class SoundManager : Singleton<SoundManager>
     [Header("SoundClip Setting")]
     public Sound[] bgmSounds;
     public Sound[] sfxSounds;
+
+    private void Start()
+    {
+        SceneManager.sceneLoaded += OnSceneLoaded;
+    }
+    private void OnSceneLoaded(Scene scene, LoadSceneMode mode)
+    {
+        if (scene.name == "MainScene")
+        {
+            bgmSource.Stop();
+            bgmSource.clip = null;
+        }
+    }
 
     public void PlayBgm(string name)
     {
@@ -53,5 +67,10 @@ public class SoundManager : Singleton<SoundManager>
     {
         if(bgmSource.isPlaying)
             bgmSource.Stop();
+    }
+    
+    ~SoundManager()
+    {
+        SceneManager.sceneLoaded -= OnSceneLoaded;
     }
 }

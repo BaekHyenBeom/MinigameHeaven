@@ -11,6 +11,7 @@ public class CharacterDescUI : MonoBehaviour
     private void OnEnable()
     {
         //Debug.Log("이벤트 연결");
+        DescInit();
         GameManager.Instance.CharacterDescUI += DescSetting;
         GameManager.Instance.ActiveCharacter();
     }
@@ -25,5 +26,11 @@ public class CharacterDescUI : MonoBehaviour
     {
         CharacterNameTxt.text = GameManager.Instance.curCharacter.characterName;
         CharacterDescTxt.text = "매우 귀엽습니다";
+    }
+
+    private void DescInit()
+    {
+        CharacterNameTxt.text = "미정";
+        CharacterDescTxt.text = "캐릭터를 선택하세요.";
     }
 }

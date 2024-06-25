@@ -12,7 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 155c720054c14824386dcdaecbef2bd7, type: 3}
   m_Name: OrangeCat
   m_EditorClassIdentifier: 
-  characterName: "\uD14C\uC2A4\uD2B8 \uB354\uBBF8"
+  characterName: "\uC624\uB80C\uC9C0\uB0E5\uC774"
   playerPrefab: {fileID: 3972273307398934580, guid: e50046167872e094686e0adb0b07eb63, type: 3}
   characterSprite: {fileID: -168558623, guid: 960ff95d8bc29904baee02ecceda6606, type: 3}
   characterAnimator: []

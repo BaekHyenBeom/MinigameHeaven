@@ -8,11 +8,9 @@ public class StageManager : MiniGameManager
     public static StageManager Instance;
     public ObstaclePool obstaclePool { get; private set; }
 
+    [Header("StageManager Setting")]
     public float prex = -100;
     public float prey = -2.74f;
-
-
- 
 
     private void Awake()
     {

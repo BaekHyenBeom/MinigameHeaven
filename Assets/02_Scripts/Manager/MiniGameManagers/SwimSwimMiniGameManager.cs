@@ -18,6 +18,7 @@ public class SwimSwimMiniGameManager : MiniGameManager
         obstaclePool = GetComponent<ObstaclePool>();
 
         InitMiniGame();
+        SetScore();
     }
 
     private void Start()

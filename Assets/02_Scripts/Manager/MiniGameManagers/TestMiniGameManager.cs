@@ -10,6 +10,7 @@ public class TestMiniGameManager : MiniGameManager
         curScore = 0;
         gameType = MiniGameType.Test;
         InitMiniGame();
+        SetScore();
     }
 
     public override void HighScoreRecord()
