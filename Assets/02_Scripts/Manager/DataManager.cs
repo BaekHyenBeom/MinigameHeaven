@@ -17,9 +17,6 @@ public class DataManager : Singleton<DataManager>
 
     void Start()
     {
-        // path를 찾은 다음에 뭔갈하는 게 좋을 듯..
-
-        gameHighScore.Add(MiniGameType.Test, 0);
         gameHighScore.Add(MiniGameType.RopeJump, 0);
         gameHighScore.Add(MiniGameType.HighJump, 0);
         gameHighScore.Add(MiniGameType.GoGoRun, 0);
@@ -33,9 +30,10 @@ public class DataManager : Singleton<DataManager>
 
     public void Save()
     {
-        Debug.Log("저장 시도");
+        //Debug.Log("저장 시도");
 
-        FileStream saveStream = new FileStream(Application.dataPath + "/SaveFile/minigameHighScore.json", FileMode.OpenOrCreate);
+        // OpenOrCreate로 하면 이상하게 쓰여지는 현상이 있기에 이와 같이 설정해뒀습니다.
+        FileStream saveStream = new FileStream(Application.dataPath + "/SaveFile/minigameHighScore.json", FileMode.Create);
 
         string jsonSaveData = JsonConvert.SerializeObject(gameHighScore);
 
@@ -104,5 +102,16 @@ public class DataManager : Singleton<DataManager>
             Debug.Log("없는 게임 타입입니다.");
         }
         return false;
+    }
+
+        // 랭킹 초기화 용도
+    public void InitRanking()
+    {
+        gameHighScore.Clear();
+        gameHighScore.Add(MiniGameType.RopeJump, 0);
+        gameHighScore.Add(MiniGameType.HighJump, 0);
+        gameHighScore.Add(MiniGameType.GoGoRun, 0);
+        gameHighScore.Add(MiniGameType.SwimSwim, 0);
+        Save();
     }
 }

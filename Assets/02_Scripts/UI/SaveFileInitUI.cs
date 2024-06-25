@@ -1,18 +1,13 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class SaveFileInitUI : MonoBehaviour
 {
-    // Start is called before the first frame update
-    void Start()
+    public void InitRanking()
     {
-        
-    }
-
-    // Update is called once per frame
-    void Update()
-    {
-        
+        DataManager.Instance.InitRanking();
+        SceneManager.LoadScene("MainScene");
     }
 }

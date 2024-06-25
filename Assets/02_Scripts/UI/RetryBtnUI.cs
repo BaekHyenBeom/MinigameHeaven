@@ -7,6 +7,7 @@ public class RetryBtnUI : MonoBehaviour
 {
     public void Retry()
     {
+        SoundUtil.SfxSound("StartSound");
         Time.timeScale = 1f;
         SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex, LoadSceneMode.Single);
     }
