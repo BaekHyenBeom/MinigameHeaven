@@ -4,18 +4,16 @@ using UnityEngine;
 
 public class RopeCollider : MonoBehaviour
 {
-    public RopeJumpMiniGameManager ropeJumpMiniGameManager;
-    public Collider2D collider;
-    public SpriteRenderer sprite;
-    float curFrame = 30.0f; // 환경설정 프레임과 연동해서 변경
+    public Collider2D col;
+
     float curSpeed = 30.0f;
-    
-    void Start()
+
+    private Coroutine coActiveRope;
+
+    private void Start()
     {
         StartCoroutine(CurSpeedChange());
-        StartCoroutine(ActiveRope());
     }
-
     private IEnumerator CurSpeedChange()
     {
         while (true)
@@ -34,24 +32,17 @@ public class RopeCollider : MonoBehaviour
         }
     }
 
-    private IEnumerator ActiveRope()
-    {
-        while (true)
-        {
-            collider.enabled = true; sprite.enabled = true;
-            yield return new WaitForSeconds(0.25f);
-            collider.enabled = false; sprite.enabled = false;
-            ropeJumpMiniGameManager.curScore++;
-            yield return new WaitForSeconds(curSpeed);
-        }
-    }
+    public void ActiveRope() => col.enabled = true;
 
-    private void OnTriggerStay2D(Collider2D other)
+    public void SetScore() => GameManager.Instance.curMiniGameScript.curScore++;
+    public void UnActiveRope() => col.enabled = false;
+
+    private void OnTriggerEnter2D(Collider2D collision)
     {
-        if (other.gameObject.CompareTag("Player"))
+        if (collision.gameObject.CompareTag("Player"))
         {
             Debug.Log("게임 오버!");
-            ropeJumpMiniGameManager.GameOver();
+            GameManager.Instance.curMiniGameScript.GameOver();
         }
     }
 }

@@ -35,6 +35,19 @@ public abstract class MiniGameManager : MonoBehaviour
     public event Action OnStart;
     public event Action OnPause;
 
+
+    public Collider2D collider;
+    private IEnumerator ActiveRope()
+    {
+        while(true)
+        {
+            collider.enabled = true;
+            yield return new WaitForSeconds(3.0f);
+            collider.enabled = false;
+            yield return new WaitForSeconds(3.0f);
+
+        }
+    }
     public virtual void InitMiniGame()
     {
        // Instantiate(GameManager.Instance.curCharacter.playerPrefab, spawnTransform.position, Quaternion.identity);
