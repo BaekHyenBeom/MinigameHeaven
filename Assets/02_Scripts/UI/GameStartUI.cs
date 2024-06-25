@@ -10,6 +10,8 @@ public class GameStartUI : MonoBehaviour
     public TextMeshProUGUI alertTxt;
     private int alertTime;
 
+    [SerializeField] private List<string> miniGameScene;
+
     public void GameStart()
     {
         if (GameManager.Instance.curCharacter == null)
@@ -21,7 +23,23 @@ public class GameStartUI : MonoBehaviour
         if (GameManager.Instance.curMinigame != MiniGameType.None)
         {
             SoundUtil.SfxSound("StartSound");
-            SceneManager.LoadScene($"{GameManager.Instance.curMinigame}Scene");
+            switch(GameManager.Instance.curMinigame)
+            {
+                case MiniGameType.RopeJump:
+                    SceneManager.LoadScene(miniGameScene[0]);
+                    break;
+                case MiniGameType.HighJump:
+                    SceneManager.LoadScene(miniGameScene[1]);
+                    break;
+                case MiniGameType.GoGoRun:
+                    SceneManager.LoadScene(miniGameScene[2]);
+                    break;
+                case MiniGameType.SwimSwim:
+                    SceneManager.LoadScene(miniGameScene[3]);
+                    break;
+                default:
+                    break;
+            }
         }
         else
         {

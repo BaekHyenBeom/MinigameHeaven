@@ -11,4 +11,13 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/01_Scenes/TestScene.unity
     guid: e8fad30a1f8266f47ae56527aa5ffda0
+  - enabled: 1
+    path: Assets/01_Scenes/DH_Test.unity
+    guid: 016f1569545706e44aabb3d1125f3194
+  - enabled: 1
+    path: Assets/01_Scenes/Hanjin.unity
+    guid: 760301a418761164284bdb3ada365eff
+  - enabled: 1
+    path: Assets/01_Scenes/05_SwimSwimScene.unity
+    guid: 7c03539b7385e184ab2562e8b5f528a6
   m_configObjects: {}

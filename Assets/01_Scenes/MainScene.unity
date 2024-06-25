@@ -13643,6 +13643,11 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   alertobj: {fileID: 1341411572}
   alertTxt: {fileID: 1341411574}
+  miniGameScene:
+  - TestScene
+  - DH_Test
+  - Hanjin
+  - 05_SwimSwimScene
 --- !u!1 &1512786365
 GameObject:
   m_ObjectHideFlags: 0
