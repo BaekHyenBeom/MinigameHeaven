@@ -70,7 +70,6 @@ public class Trap : MonoBehaviour
                         moveSpeed = 2.5f;
                     }
                 }
-
             }
 
             SpikeHeadAttack();
@@ -84,11 +83,11 @@ public class Trap : MonoBehaviour
         {
             if (isCollision)
             {
-                transform.position = Vector3.MoveTowards(transform.position, new Vector3(transform.position.x, 0, transform.position.z), 0.05f);
+                transform.position = Vector3.MoveTowards(transform.position, new Vector3(transform.position.x, 0, transform.position.z), 0.1f);
             }
             else
             {
-                transform.position = Vector3.MoveTowards(transform.position, new Vector3(transform.position.x, -6.25f, transform.position.z), 0.05f);
+                transform.position = Vector3.MoveTowards(transform.position, new Vector3(transform.position.x, -6.25f, transform.position.z), 0.25f);
             }
         }
     }
