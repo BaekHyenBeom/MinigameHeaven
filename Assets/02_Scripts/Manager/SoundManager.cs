@@ -23,13 +23,14 @@ public class SoundManager : Singleton<SoundManager>
     private void Start()
     {
         SceneManager.sceneLoaded += OnSceneLoaded;
+        PlayBgm("MainBgm");
     }
     private void OnSceneLoaded(Scene scene, LoadSceneMode mode)
     {
         if (scene.name == "MainScene")
         {
             bgmSource.Stop();
-            bgmSource.clip = null;
+            PlayBgm("MainBgm");
         }
     }
 
