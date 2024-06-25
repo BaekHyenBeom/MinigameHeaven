@@ -29,6 +29,7 @@ public class SoundManager : Singleton<SoundManager>
     {
         if (scene.name == "MainScene")
         {
+            Time.timeScale = 1f;
             bgmSource.Stop();
             PlayBgm("MainBgm");
         }
