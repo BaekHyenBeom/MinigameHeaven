@@ -6,25 +6,24 @@ using UnityEngine;
 
 public class Score : MonoBehaviour
 {
-
     [SerializeField] private TextMeshProUGUI curScoreNumTxt;
     [SerializeField] private TextMeshProUGUI topScoreNumTxt;
     [SerializeField] UpController upController;
     [SerializeField] MiniGameManager curMiniGame;
+    [SerializeField] StageManager curStageManager;
     int score = 0;
     int high = 0;
 
-
     public void NoWScore()
     {
-        if (score < (int)upController.transform.position.y)
+        if (score < (int)curStageManager.curPlayerTransform.position.y)
         {
-            score = (int)upController.transform.position.y;
+            score = (int)curStageManager.curPlayerTransform.position.y;
             curMiniGame.curScore = score;
             curScoreNumTxt.text = $"{score} ";
         }
 
-        Vector3 view = Camera.main.WorldToScreenPoint(upController.transform.position);
+        Vector3 view = Camera.main.WorldToScreenPoint(curStageManager.curPlayerTransform.position);
         if (view.y < -50)
         {
             StageManager.Instance.GameOver();
@@ -33,9 +32,6 @@ public class Score : MonoBehaviour
 
 
     }
-
-  
-    
     
     public void HighScore()
     {
@@ -49,10 +45,12 @@ public class Score : MonoBehaviour
         }
     }
 
-
-
     void Start()
     {
+        if (curMiniGame.TryGetComponent<StageManager>(out StageManager stageManager))
+        {
+            curStageManager = stageManager;
+        }
         //high = PlayerPrefs.GetInt("Best");
         // DataManager로 수정하겠습니다.
         high = DataManager.Instance.GiveHighScore(MiniGameType.HighJump);
@@ -66,5 +64,4 @@ public class Score : MonoBehaviour
         HighScore();
        
     }
-    
 }

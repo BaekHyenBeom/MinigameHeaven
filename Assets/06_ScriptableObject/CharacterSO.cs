@@ -8,5 +8,5 @@ public class CharacterSO : ScriptableObject
     public string characterName;
     public GameObject playerPrefab;
     public Sprite characterSprite;
-    public List<Animator> characterAnimator;
+    public List<GameObject> GamePrefabs;
 }

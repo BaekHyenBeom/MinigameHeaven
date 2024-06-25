@@ -11,6 +11,7 @@ public class StageManager : MiniGameManager
     [Header("StageManager Setting")]
     public float prex = -100;
     public float prey = -2.74f;
+    public Transform curPlayerTransform;
 
     private void Awake()
     {
@@ -27,8 +28,12 @@ public class StageManager : MiniGameManager
     }
     private void Start()
     {
-
         InitMiniGame();
+        InitPlayer();
+        if(curPlayerObject.TryGetComponent<UpController>(out UpController upController))
+        {
+            curPlayerTransform = upController.transform;
+        }
         for (int i = 0; i < 20; i++)
         {
                createClouds();

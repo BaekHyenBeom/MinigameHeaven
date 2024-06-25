@@ -12,7 +12,10 @@ public class Character : MonoBehaviour
     public CharacterSO curCharacter;
     public Animator curAnimator;
 
-   
+    protected virtual void Start()
+    {
+        curMiniGame = GameManager.Instance.curMiniGameScript;
+    }
 
     public virtual void IdleAnim()
     {

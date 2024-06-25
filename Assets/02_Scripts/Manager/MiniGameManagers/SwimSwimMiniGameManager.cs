@@ -19,6 +19,7 @@ public class SwimSwimMiniGameManager : MiniGameManager
 
         InitMiniGame();
         SetScore();
+        InitPlayer();
     }
 
     private void Start()

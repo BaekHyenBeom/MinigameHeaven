@@ -19,6 +19,7 @@ public abstract class MiniGameManager : MonoBehaviour
 {
     public int curScore;
     public MiniGameType gameType;
+    public GameObject curPlayerObject;
 
     [Header("PlayerSettings")]
     public Transform spawnTransform;
@@ -52,6 +53,11 @@ public abstract class MiniGameManager : MonoBehaviour
     {
         curScoreNum.text = 0.ToString();
         topScoreNum.text = DataManager.Instance.GiveHighScore(gameType).ToString();
+    }
+
+    public void InitPlayer()
+    {
+        curPlayerObject =Instantiate(GameManager.Instance.curCharacter.GamePrefabs[(int)GameManager.Instance.curMinigame], spawnTransform);
     }
 
     public virtual void GameOver()
