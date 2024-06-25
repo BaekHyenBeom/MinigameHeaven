@@ -33,6 +33,14 @@ public class TestController : MonoBehaviour, IController
             rigid.AddForce(Vector2.up * 5, ForceMode2D.Impulse);
         }
     }
+    
+    public void OnJumpSound(InputAction.CallbackContext context)
+    {
+        if(context.phase == InputActionPhase.Started)
+        {
+            SoundManager.Instance.PlaySfxSound("Swim");
+        }
+    }
 
     public void OnMove(InputAction.CallbackContext context)
     {
@@ -45,7 +53,6 @@ public class TestController : MonoBehaviour, IController
             curMovementInput = 0f;
         }
     }
-
     public void ConnetEvent(Character character)
     {
         throw new NotImplementedException();
