@@ -22,6 +22,7 @@ public class RopeJumpController : MonoBehaviour, IController
             if (Time.timeScale == 0.0f) { return; }
 
             canJumpCount--;
+            SoundManager.Instance.PlaySfxSound("Jump");
             // SoundManager.Instance.PlaySfxSound("Jump");
             rigid.velocity = new Vector2 (rigid.velocity.x, 0f);
             rigid.AddForce(Vector2.up * 5, ForceMode2D.Impulse);
