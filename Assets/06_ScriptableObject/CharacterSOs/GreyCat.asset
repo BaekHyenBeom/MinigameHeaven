@@ -12,7 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 155c720054c14824386dcdaecbef2bd7, type: 3}
   m_Name: GreyCat
   m_EditorClassIdentifier: 
-  characterName: "\uD14C\uC2A4\uD2B8 \uB354\uBBF8"
+  characterName: "\uD68C\uC0C9\uB0E5\uC774"
   playerPrefab: {fileID: 91856750919999566, guid: b788c07a7f9e3ed4d949569b47b09861, type: 3}
   characterSprite: {fileID: -856854309, guid: 867bc2b8d8f268049a60714d5ff307e7, type: 3}
   characterAnimator: []

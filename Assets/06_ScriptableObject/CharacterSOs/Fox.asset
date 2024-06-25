@@ -12,7 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 155c720054c14824386dcdaecbef2bd7, type: 3}
   m_Name: Fox
   m_EditorClassIdentifier: 
-  characterName: "\uD14C\uC2A4\uD2B8 \uB354\uBBF8"
+  characterName: "\uC5EC\uC6B0"
   playerPrefab: {fileID: 8850638134469372037, guid: f547489ed93c28944bcc3a2edc04e99f, type: 3}
   characterSprite: {fileID: 1037973070, guid: bc4c0af31cdcd36429af4ba02e742f85, type: 3}
   characterAnimator: []

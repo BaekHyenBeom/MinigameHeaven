@@ -1377,6 +1377,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   characterSO: {fileID: 11400000, guid: 20072eeb5fe82fa4fa67663da0199c0f, type: 2}
   nameTxt: {fileID: 1969748161}
+  characterIcon: {fileID: 575415784}
 --- !u!114 &170220323
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1777,6 +1778,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   characterSO: {fileID: 11400000, guid: 20072eeb5fe82fa4fa67663da0199c0f, type: 2}
   nameTxt: {fileID: 902293804}
+  characterIcon: {fileID: 937654950}
 --- !u!114 &200130749
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2310,6 +2312,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   characterSO: {fileID: 11400000, guid: 20072eeb5fe82fa4fa67663da0199c0f, type: 2}
   nameTxt: {fileID: 1269801438}
+  characterIcon: {fileID: 1648208036}
 --- !u!114 &221156004
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2626,6 +2629,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   characterSO: {fileID: 11400000, guid: 20072eeb5fe82fa4fa67663da0199c0f, type: 2}
   nameTxt: {fileID: 1383730071}
+  characterIcon: {fileID: 323354366}
 --- !u!114 &234457703
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2867,6 +2871,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   characterSO: {fileID: 11400000, guid: 20072eeb5fe82fa4fa67663da0199c0f, type: 2}
   nameTxt: {fileID: 32921506}
+  characterIcon: {fileID: 945957666}
 --- !u!114 &246168081
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -5917,6 +5922,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   characterSO: {fileID: 11400000, guid: 20072eeb5fe82fa4fa67663da0199c0f, type: 2}
   nameTxt: {fileID: 677521905}
+  characterIcon: {fileID: 1653251678}
 --- !u!114 &556463361
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -7383,7 +7389,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c3a508dedbb55c24e8f12271904a5f89, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  curType: 2
+  curType: 3
   minigameName: "\uCCA8\uBC99\uCCA8\uBC99"
   minigameNameTxt: {fileID: 1539753210}
   minigameHighScoreNum: {fileID: 2108949442}
@@ -10456,6 +10462,7 @@ GameObject:
   - component: {fileID: 1129711729}
   - component: {fileID: 1129711731}
   - component: {fileID: 1129711730}
+  - component: {fileID: 1129711732}
   m_Layer: 5
   m_Name: CharacterSelectPanel
   m_TagString: Untagged
@@ -10524,6 +10531,48 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1129711728}
   m_CullTransparentMesh: 1
+--- !u!114 &1129711732
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1129711728}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9f524a3aa663c37498ae6bd8cdfc0833, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Buttons:
+  - {fileID: 1607465085}
+  - {fileID: 1909316060}
+  - {fileID: 221156003}
+  - {fileID: 246168080}
+  - {fileID: 556463360}
+  - {fileID: 170220322}
+  - {fileID: 1821936422}
+  - {fileID: 200130748}
+  - {fileID: 234457702}
+  enableList:
+  - name: "\uD3F4\uC9DD\uD3F4\uC9DD"
+    gameType: 0
+    enableCharacter:
+    - {fileID: 11400000, guid: 20072eeb5fe82fa4fa67663da0199c0f, type: 2}
+  - name: "\uB192\uC774\uB192\uC774"
+    gameType: 1
+    enableCharacter:
+    - {fileID: 11400000, guid: 20072eeb5fe82fa4fa67663da0199c0f, type: 2}
+  - name: "\uB2EC\uB824\uB2EC\uB824"
+    gameType: 2
+    enableCharacter:
+    - {fileID: 11400000, guid: 0ac9b29a5dfe6fc44b19ec643bdb8e99, type: 2}
+    - {fileID: 11400000, guid: f85895e51981adb4db921d278a79e632, type: 2}
+    - {fileID: 11400000, guid: 41beff0880126af47a81a423bf6bdec2, type: 2}
+    - {fileID: 11400000, guid: 2e8a05f9e6e8a5d4d9ddb503167f1ced, type: 2}
+  - name: "\uCCA8\uBC99\uCCA8\uBC99"
+    gameType: 3
+    enableCharacter:
+    - {fileID: 11400000, guid: 20072eeb5fe82fa4fa67663da0199c0f, type: 2}
 --- !u!1 &1132436287
 GameObject:
   m_ObjectHideFlags: 0
@@ -10807,7 +10856,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c3a508dedbb55c24e8f12271904a5f89, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  curType: 3
+  curType: 2
   minigameName: "\uB2EC\uB824\uB2EC\uB824"
   minigameNameTxt: {fileID: 87330133}
   minigameHighScoreNum: {fileID: 1516677347}
@@ -12287,6 +12336,8 @@ MonoBehaviour:
   bgmSounds:
   - name: MainBgm
     clip: {fileID: 8300000, guid: 1532c7e67c2d60c4c8780da14b7e8fcf, type: 3}
+  - name: GoGoRun
+    clip: {fileID: 8300000, guid: 90eae78e8ce85a849b5b0ca11b2de641, type: 3}
   sfxSounds:
   - name: ButtonSound
     clip: {fileID: 8300000, guid: 29bde6326b4c34ad8a12da475f79b50a, type: 3}
@@ -12294,6 +12345,22 @@ MonoBehaviour:
     clip: {fileID: 8300000, guid: 7bd6b897eb5ca4b7d88a205c4a51640c, type: 3}
   - name: ErrorSound
     clip: {fileID: 8300000, guid: 19f89c6e740e7447f9e12a8310d3e973, type: 3}
+  - name: Counting
+    clip: {fileID: 8300000, guid: 660c0b27cf9b23f468b66cbbc2d6226e, type: 3}
+  - name: CountDownStart
+    clip: {fileID: 8300000, guid: b151704e277e2844483b3e54bbe7db4e, type: 3}
+  - name: Jump
+    clip: {fileID: 8300000, guid: 116d1f99f6a07044d83d6c5a2f476af6, type: 3}
+  - name: Fail
+    clip: {fileID: 8300000, guid: 40ad6badfb580644293ac271ca60a834, type: 3}
+  - name: Crouch
+    clip: {fileID: 8300000, guid: ee6d63ff187f73f4f9caf8bbdd1ec286, type: 3}
+  - name: CrouchUp
+    clip: {fileID: 8300000, guid: f7a26e99045c80040a52d0478307dbf3, type: 3}
+  - name: Trampoline
+    clip: {fileID: 8300000, guid: 6ab1be1748f97e043914474fdff30dcd, type: 3}
+  - name: SpikeHeadHit
+    clip: {fileID: 8300000, guid: 03a896e5fa4f8004faebf7a50907e939, type: 3}
 --- !u!1 &1282601844
 GameObject:
   m_ObjectHideFlags: 0
@@ -15098,6 +15165,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   characterSO: {fileID: 11400000, guid: 20072eeb5fe82fa4fa67663da0199c0f, type: 2}
   nameTxt: {fileID: 352985578}
+  characterIcon: {fileID: 1067263863}
 --- !u!1 &1612403022
 GameObject:
   m_ObjectHideFlags: 0
@@ -16671,6 +16739,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   characterSO: {fileID: 11400000, guid: 20072eeb5fe82fa4fa67663da0199c0f, type: 2}
   nameTxt: {fileID: 1241956619}
+  characterIcon: {fileID: 1073938396}
 --- !u!114 &1821936423
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -17376,6 +17445,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   characterSO: {fileID: 11400000, guid: 20072eeb5fe82fa4fa67663da0199c0f, type: 2}
   nameTxt: {fileID: 1210970017}
+  characterIcon: {fileID: 2117735945}
 --- !u!114 &1909316061
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -17523,7 +17593,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 22c4115c2a326bb4087a83617cc558c3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  gameType: 2
+  gameType: 3
   miniGameName: "\uCCA8\uBC99\uCCA8\uBC99"
   gameTxt: {fileID: 1450078249}
   gameIcon: {fileID: 1167082561}
@@ -18716,7 +18786,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 22c4115c2a326bb4087a83617cc558c3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  gameType: 3
+  gameType: 2
   miniGameName: "\uB2EC\uB824\uB2EC\uB824"
   gameTxt: {fileID: 1603427005}
   gameIcon: {fileID: 417615052}
