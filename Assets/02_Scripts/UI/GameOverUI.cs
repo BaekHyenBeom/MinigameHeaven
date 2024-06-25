@@ -9,7 +9,7 @@ public class GameOverUI : MonoBehaviour
     [SerializeField] private TextMeshProUGUI highScoreNum;
     [SerializeField] private GameObject newRecordTxt;
 
-    private void GameResult()
+    public void GameResult()
     {
         curScoreNum.text = GameManager.Instance.curMiniGameScript.curScore.ToString();
         if (DataManager.Instance.RenewalHighScore(GameManager.Instance.curMiniGameScript.curScore, GameManager.Instance.curMinigame))

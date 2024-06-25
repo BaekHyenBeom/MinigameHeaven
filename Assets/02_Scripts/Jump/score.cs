@@ -10,6 +10,7 @@ public class Score : MonoBehaviour
     [SerializeField] private TextMeshProUGUI curScoreNumTxt;
     [SerializeField] private TextMeshProUGUI topScoreNumTxt;
     [SerializeField] UpController upController;
+    [SerializeField] MiniGameManager curMiniGame;
     int score = 0;
     int high = 0;
 
@@ -19,6 +20,7 @@ public class Score : MonoBehaviour
         if (score < (int)upController.transform.position.y)
         {
             score = (int)upController.transform.position.y;
+            curMiniGame.curScore = score;
             curScoreNumTxt.text = $"{score} ";
         }
 
@@ -51,8 +53,10 @@ public class Score : MonoBehaviour
 
     void Start()
     {
-       high = PlayerPrefs.GetInt("Best");
-        topScoreNumTxt.text = $"{high} ";
+        //high = PlayerPrefs.GetInt("Best");
+        // DataManager로 수정하겠습니다.
+        high = DataManager.Instance.GiveHighScore(MiniGameType.HighJump);
+        topScoreNumTxt.text = $"{high}";
 
     }
     private void FixedUpdate()

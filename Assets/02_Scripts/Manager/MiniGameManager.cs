@@ -28,6 +28,9 @@ public abstract class MiniGameManager : MonoBehaviour
     public TextMeshProUGUI curScoreNum;
     public TextMeshProUGUI topScoreNum;
 
+    [Header("Game Result")]
+    public GameOverUI gameOverUI;
+
     public event Action OnStart;
     public event Action OnPause;
 
@@ -45,10 +48,17 @@ public abstract class MiniGameManager : MonoBehaviour
         //Invoke("GameOver", 5f);
     }
 
+    public void SetScore()
+    {
+        curScoreNum.text = 0.ToString();
+        topScoreNum.text = DataManager.Instance.GiveHighScore(gameType).ToString();
+    }
+
     public virtual void GameOver()
     {
         Time.timeScale = 0.0f;
         GameOverPanel.SetActive(true);
+        gameOverUI.GameResult();
     }
 
     public virtual void CallStart()

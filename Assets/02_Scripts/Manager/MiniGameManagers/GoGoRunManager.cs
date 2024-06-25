@@ -33,6 +33,7 @@ public class GoGoRunManager : MiniGameManager
     private IEnumerator Start()
     {
         InitMiniGame();
+        SetScore();
 
         txtCount.gameObject.SetActive(true);
         while(countDown > 0)
@@ -101,11 +102,12 @@ public class GoGoRunManager : MiniGameManager
             }
         }
     }
-    
+
 
 
     public void SetScore()
     {
+        base.SetScore();
         curScore = ((int)score);
         curScoreNum.text = curScore.ToString();
     }

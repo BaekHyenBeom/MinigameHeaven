@@ -720,11 +720,12 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   curScore: 0
-  gameType: 2
+  gameType: 3
   spawnTransform: {fileID: 1487805856}
   GameOverPanel: {fileID: 6207326551601066255}
   curScoreNum: {fileID: 6207326551601066257}
   topScoreNum: {fileID: 6207326551601066256}
+  gameOverUI: {fileID: 6207326551601066258}
   swimSwimAir: {fileID: 992608643}
 --- !u!114 &864622977
 MonoBehaviour:
@@ -1581,6 +1582,10 @@ MonoBehaviour:
   curMinigame: 2
   curMinigameName: 
   curMiniGameScript: {fileID: 0}
+  curMiniGameBtn: {fileID: 0}
+  curCharacterBtn: {fileID: 0}
+  curMiniGameAnim: {fileID: 0}
+  curCharacterAnim: {fileID: 0}
 --- !u!4 &1515399392
 Transform:
   m_ObjectHideFlags: 0
@@ -2320,6 +2325,17 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: f4688fdb7df04437aeb418b961361dc5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &6207326551601066258 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 4433103822093256164, guid: e070576c76ddcfc48b752a00d0a7b1b8, type: 3}
+  m_PrefabInstance: {fileID: 6207326551601066254}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4af8dd41322e96d40b3f9211bfb18e7e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
 --- !u!1660057539 &9223372036854775807
