@@ -17,6 +17,7 @@ public class TramPoline : Trap
             if (collision.TryGetComponent(out Rigidbody2D rb))
             {
                 animator.SetTrigger(hashTrigger);
+                SoundManager.Instance.PlaySfxSound("Trampoline");
                 rb.velocity = new Vector2(rb.velocity.x, 0);
                 rb.AddForce(Vector3.up * power, ForceMode2D.Impulse);
 
