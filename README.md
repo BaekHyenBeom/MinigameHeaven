@@ -1,13 +1,15 @@
-<h1 align = "center"><b>제목 넣을 공간</b></h1>
+<h1 align = "center"><b>미니게임천국</b></h1>
 <div align = "center">
  
-이미지 넣을 공간
+|![Init](https://github.com/BaekHyenBeom/MinigameHeaven/assets/167046656/c60bb96a-2538-4928-8c0b-ae919aa90cf0)|![Init](https://github.com/BaekHyenBeom/MinigameHeaven/assets/167046656/c44e00d8-e226-4316-9774-27cb9f977462)|
+|:------:|:------:|
+|![Init](https://github.com/BaekHyenBeom/MinigameHeaven/assets/167046656/e981c428-1ac5-48a3-86ca-73201f02087a)|![Init](https://github.com/BaekHyenBeom/MinigameHeaven/assets/167046656/ab438a4c-ec86-44e5-98b1-12829243f2c9)|
 
 </div>
 </br>
 <div align = "center"> 
  
-미니게임천국을 오마주하여 각종 미니게임을 통해 점수를 쌓아올리는 종합 캐주얼 게임입니다
+미니게임천국을 오마주하여 각종 미니게임을 플레이하며 최고 점수를 기록하는 종합 캐주얼 게임입니다
 
 </div>
 </br>
