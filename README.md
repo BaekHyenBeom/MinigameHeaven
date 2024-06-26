@@ -46,7 +46,7 @@
 <h3 align = "center"><b>사용하는 조작키</b></h3>
 - 각 게임마다 조작키가 다를 수 있습니다.
 
-|A|D|SpaceBar|Ctrl|
+|<-|->|SpaceBar|Ctrl|
 |:------:|:------:|:------:|:------:|
 
 </br>
@@ -95,7 +95,7 @@
 |폴짝폴짝|높이높이|
 |:------:|:------:|
 |![Init](https://github.com/BaekHyenBeom/MinigameHeaven/assets/167046656/c60bb96a-2538-4928-8c0b-ae919aa90cf0)|![Init](https://github.com/BaekHyenBeom/MinigameHeaven/assets/167046656/c44e00d8-e226-4316-9774-27cb9f977462)|
-|SpaceBar - 점프|A, D - 좌우 이동|
+|SpaceBar - 점프|<-, -> - 좌우 이동|
 
 |달려달려|첨벙첨벙|
 |:------:|:------:|
